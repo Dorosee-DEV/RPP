@@ -77,7 +77,7 @@ function resetText(){
 
 function selectCsv1(){
     var input = document.createElement("input");
-    input.id = "inputTest"
+    input.id = "inputTest1"
     input.type = "file";
     input.click();
 

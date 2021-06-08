@@ -743,8 +743,7 @@ def rmi_analysis(year0, km0):
 
     df_w_13.to_csv(os.path.join(PROJECT_DIRECTORY_PREFIX, 'static/resources/analysis_result.csv'), encoding= 'euc=kr')
 
-
-    return 'result'
+    return df_w_13
 
 
 if __name__ == '__main__':
