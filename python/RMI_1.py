@@ -68,7 +68,7 @@ def rmi_analysis(year0, km0):
     #%%   연도 추출
 
     df3_d = pd.DataFrame({'date': pd.to_datetime(df3['일시'])})
-    df3['Year'] = df3_d['date'].dt.year             # df3에 연도를 추출해서 붙임
+    df3['Year'] = df3_d['date'].dt.year                # df3에 연도를 추출해서 붙임
 
     #%% 기상
     df3_res = pd.DataFrame()                  # 결과 데이터프레임
@@ -337,7 +337,7 @@ def rmi_analysis(year0, km0):
     df_w_2 = pd.DataFrame()
     df_w_3 = pd.DataFrame()
     df_w_4 = pd.DataFrame()
-    x = float(km0)
+    x = int(km0)
     
     for i in range(len(df_ws)):
         
@@ -727,19 +727,24 @@ def rmi_analysis(year0, km0):
         df_w_13_a = df_ws[is_bonbu & is_jisa & is_hang & is_no & is_si & is_jong]
         
         is_rmi = df_w_13_a['RMI']>=9
-        x = sum(is_rmi)
-        y = len(df_w_13_a)
-        z = x/y*100
-        
-        df_w_13_b = pd.DataFrame({"RMI9이상비율":[z]})
-        df_w_13_c = df_w_13_c.append(df_w_13_b, ignore_index=True)
-        
-    df_w_13_d = pd.concat([df_w_11, df_w_13_c], axis=1)
-    df_w_13 = df_w_13_d.sort_values(by=['RMI9이상비율'], axis=0, ascending=False)
-    df_w_13 = df_w_13.reset_index(drop=True)
-    df_w_13.to_csv(os.path.join(PROJECT_DIRECTORY_PREFIX, 'static/resources/analysis_result.csv'), encoding='euc=kr')
+        x = sum(is_rmi)               # RMI 9이상 연장
+        y = len(df_w_13_a)            # 자료상 연장
+        z = round(x/y*100,2)                   # 9이상비율(B/A)
 
-    return df_w_13
+        df_w_13_b = pd.DataFrame({"자료상 연장(A)":[y], "RMI 9이상 연장(B)":[x], "RMI 9이상 비율(B/A)":[z]})
+        df_w_13_c = df_w_13_c.append(df_w_13_b, ignore_index=True)
+
+
+    df_w_13_d = pd.concat([df_w_11, df_w_13_c], axis=1)
+    df_w_13 = df_w_13_d.sort_values(by=['RMI 9이상 비율(B/A)'], axis=0, ascending=False)
+    df_w_13 = df_w_13.reset_index(drop=True)
+    df_w_13 = df_w_13.reindex(columns=['본부', '지사', '행선', '노선', '시점이정', '종점이정', '연장', '자료상 연장(A)', 'RMI 9이상 연장(B)', 'RMI 9이상 비율(B/A)', 'RMI'])
+    df_w_13.columns = ['본부', '지사', '행선', '노선', '시점이정', '종점이정', '실제 연장', '자료상 연장(A)', 'RMI 9이상 연장(B)', 'RMI 9이상 비율(B/A)', '평균 RMI']
+
+    df_w_13.to_csv(os.path.join(PROJECT_DIRECTORY_PREFIX, 'static/resources/analysis_result.csv'), encoding= 'euc=kr')
+
+
+    return 'result'
 
 
 if __name__ == '__main__':
