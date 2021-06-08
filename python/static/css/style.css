@@ -1,0 +1,583 @@
+body{
+	position: relative;
+	width: 1929px;
+	height: 2500px;
+	margin : 0 auto;
+	background: linear-gradient(180deg, #2D3653 0%, #28314A 64.58%, #344267 100%);
+	}
+	
+	#vector1{
+	/* Vector */
+	
+	position: absolute;
+	height: 38.521400451660156px;
+	width: 48px;
+	left: 103px;
+	top: 85.60311889648438px;
+	
+	}
+	
+	#vector2{
+	/* Vector */
+	
+	
+	position: absolute;
+	height: 38.52142333984375px;
+	width: 48px;
+	left: 103px;
+	top: 559.3385009765625px;
+	
+	}
+	
+	#information{
+	position: absolute;
+	width: 62px;
+	height: 56.83px;
+	left: 1546px;
+	top: 42px;
+	
+	background: #385A6D;
+	box-shadow: 0px 2.95238px 2.95238px rgba(0, 0, 0, 0.25);
+	border-radius: 30px;
+	
+	font-family: NanumGothic;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 50px;
+	line-height: 49px;
+	text-align : center;
+	color: #FFFFFF;
+	}
+	
+	
+	
+	#sample{
+	/* Sample */
+	
+	position: absolute;
+	width: 161px;
+	height: 52.93px;
+	left: 1648px;
+	top: 46px;
+	
+	font-family: NanumGothic;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 29.4064px;
+	/* line-height: 29px; */
+	text-align :center;
+
+	color: #FFFFFF;
+	background: #385A6D;
+	box-shadow: 0px 2.94064px 2.94064px rgba(0, 0, 0, 0.25);
+	border-radius: 14.7032px;
+	}
+	
+	#header{
+	/* 자료입력 박스 */
+	position: absolute;
+	width: 1718px;
+	height: 270px;
+	left: 103px;
+	top: 140px;
+	
+	background: radial-gradient(89.44% 89.44% at 50% 50%, rgba(72, 83, 116, 0.92) 0%, rgba(62, 73, 108, 0.1) 100%);
+	border-radius: 10px;
+	
+	}
+	
+	#Button3{ 
+	
+	/* HPMS */
+	position: absolute;
+	width: 234px;
+	height: 89px;
+	left: 160px;
+	top: 212px;
+	border-radius:15px;
+	
+	font-family: NanumGothic;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 40px;
+	line-height: 40px;
+	text-align: center;
+	
+	background:#505B7E;
+	color:#FFFFFF;
+	
+	
+	filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.41));
+	}
+	
+	#Button4{ 
+	
+	/* 교통량 */
+	position: absolute;
+	width: 234px;
+	height: 89px;
+	left: 505px;
+	top: 212px;
+	border-radius:15px;
+	
+	font-family: NanumGothic;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 40px;
+	line-height: 40px;
+	text-align: center;
+	
+	background:#505B7E;
+	color:#FFFFFF;
+	
+	
+	filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.41));
+	}
+	
+	#Button5{ 
+	
+	/* 기상 */
+	position: absolute;
+	width: 234px;
+	height: 89px;
+	left: 850px;
+	top: 212px;
+	border-radius:15px;
+	
+	font-family: NanumGothic;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 40px;
+	line-height: 40px;
+	text-align: center;
+	
+	background:#505B7E;
+	color:#FFFFFF;
+	
+	
+	filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.41));
+	}
+	
+	#Button6{
+	/* 제설제 */
+	
+	position: absolute;
+	width: 234px;
+	height: 89px;
+	left: 1195px;
+	top: 212px;
+	
+	filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.41));
+	
+	font-family: NanumGothic;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 40px;
+	line-height: 40px;
+	text-align: center;
+	
+	background:#505B7E;
+	color: #FFFFFF;
+	border-radius:15px;
+	}
+	
+	#Button7{ 
+	
+	/* 지점-지사 */
+	position: absolute;
+	width: 234px;
+	height: 89px;
+	left: 1540px;
+	top: 212px;
+	border-radius:15px;
+	
+	font-family: NanumGothic;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 40px;
+	line-height: 40px;
+	text-align: center;
+	
+	background:#505B7E;
+	color:#FFFFFF;
+	
+	
+	filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.41));
+	}
+	
+	#textdiv1{
+		position: absolute;
+	width: 316px;
+	height: 52px;
+	left: 164px;
+	top: 88px;
+	
+	font-family: NanumGothic;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 40px;
+	line-height: 40px;
+	
+	color: #FFFFFF;
+	
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	}
+	
+	#textdiv4{
+	/* uploaded successfully */
+	
+	position: absolute;
+	width: 234px;
+	height: 72px;
+	left: 160px;
+	top: 300px;
+	
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 25px;
+	line-height: 29px;
+	text-align: center;
+	
+	color: #08D403;
+	}
+	
+	#textdiv5{
+	/* uploaded successfully */
+	
+	position: absolute;
+	width: 234px;
+	height: 72px;
+	left: 505px;
+	top: 300px;
+	
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 25px;
+	line-height: 29px;
+	text-align: center;
+	
+	color: #08D403;
+	}
+	
+	#textdiv6{
+	/* wrong data */
+	
+	position: absolute;
+	width: 234px;
+	height: 53px;
+	left: 850px;
+	top: 300px;
+	
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 25px;
+	line-height: 29px;
+	text-align: center;
+	
+	color: #FF0000;
+	}
+	
+	#textdiv7{
+	/* uploaded successfully */
+	
+	position: absolute;
+	width: 234px;
+	height: 72px;
+	left: 1195px;
+	top: 300px;
+	
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 25px;
+	line-height: 29px;
+	text-align: center;
+	
+	color: #08D403;
+	}
+	
+	#textdiv8{
+	/* wrong data */
+	
+	position: absolute;
+	width: 234px;
+	height: 53px;
+	left: 1540px;
+	top: 300px;
+	
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 25px;
+	line-height: 29px;
+	text-align: center;
+	
+	color: #FF0000;
+	}
+	
+	#year{
+	/* year */
+	
+	position: absolute;
+	width: 258px;
+	height: 80px;
+	left: 99px;
+	top: 449px;
+	
+	font-family: NanumGothic;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 40px;
+	line-height: 40px;
+	text-align: center;
+	
+	color: #FFFFFF;
+	background: #505B7E ;
+	}
+	
+	#yinfo{
+	/* 년 (예측연도 입력) */
+	
+	
+	position: absolute;
+	width: 255px;
+	height: 40px;
+	left: 367px;
+	top: 489px;
+	
+	font-family: NanumGothic;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 30px;
+	
+	color: #FFFFFF;
+	}
+	img {
+		max-width: 100%;
+		max-height: 100%;
+	}
+
+
+	#km{
+		position: absolute;
+		height: 80px;
+		width: 258px;
+		left: 828px;
+		top: 449px;
+	
+
+		font-family: NanumGothic;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		line-height: 40px;
+		text-align: center;
+
+		color: #FFFFFF;
+		background: #505B7E;
+
+	}
+
+	#kinfo{
+		position: absolute;
+		height: 40px;
+		width: 255px;
+		left: 1096px;
+		top: 489px;
+		
+
+		font-family: NanumGothic;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 30px;
+		line-height: 30px;
+
+		color: #FFFFFF;
+
+
+	}
+
+
+
+
+	#rect3{
+	/* 실행 */
+	
+	position: absolute;
+	width: 258px;
+	height: 83px;
+	left: 1557px;
+	top: 449px;
+	border-radius:15px;
+	
+	font-family: NanumGothic;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 40px;
+	/* line-height: 40px; */
+	text-align: center;
+	
+	background: #3E496C;
+	color:#FFFFFF;
+	filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.25));
+	}
+	
+	#text11{
+	/* 리모델링 우선순위 선정결과 */
+	
+	
+	position: absolute;
+	width: 560px;
+	height: 52px;
+	left: 160px;
+	top: 560px;
+	
+	font-family: NanumGothic;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 40px;
+	line-height: 40px;
+	
+	color: #FFFFFF;
+	}
+	
+	#rect4{
+	position: absolute;
+	width: 1731px;
+	height: 1696px;
+	left: 99px;
+	top: 629px;
+	
+	background: #3E496C;
+	border-radius: 10px;
+	transform: matrix(1, 0, 0, -1, 0, 0);
+	}
+	
+	#rect5{
+	position: absolute;
+	width: 1682px;
+	height: 1645px;
+	left: 127px;
+	top: 654px;
+	
+	background: #505B7E;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	}
+	
+	#ret_img{
+	/* 우선순위 선정결과 이미지창 */
+	
+	position: absolute;
+	width: 1627px;
+	height: 1588px;
+	left: 151px;
+	top: 663px;
+	}
+	
+	
+	#reset{
+	/* Reset */
+	
+	position: absolute;
+	width: 300px;
+	height: 95px;
+	left: 99px;
+	top: 2362px;
+	
+	font-family: NanumGothic;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 50px;
+	/* line-height: 40px; */
+	text-align: center;
+	
+	background: #505B7E ;
+	color: #FFFFFF;
+	
+	box-shadow: 19.359px 19.359px 19.359px 6.45299px rgba(0, 0, 0, 0.25);
+	border-radius: 19.359px;
+	}
+	
+	
+	#save{
+	/* save */
+	
+	position: absolute;
+	width: 300px;
+	height: 95px;
+	left: 1530px;
+	top: 2362px;
+	
+	font-family: NanumGothic;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 50px;
+	/* line-height: 40px; */
+	text-align: center;
+	
+	background: #505B7E;
+	color: #FFFFFF;
+	
+	box-shadow: 19.3151px 19.3151px 19.3151px 6.43836px rgba(0, 0, 0, 0.25);
+	border-radius: 19.3151px;
+	
+	}
+	
+
+	#copyright{
+	/*copyright */
+
+	position: absolute;
+	width: 981px;
+	height: 46px;
+	left: 480px;
+	top: 2419px;
+
+	}
+
+
+
+	#rst01 {
+
+		position: absolute;
+		width: 1627px;
+		height: 1588px;
+		left: 151px;
+		top: 679px;
+
+		background: #ccc;
+		border-collapse: separate;
+		border-spacing: 1px;
+		
+		border: 1px solid black;
+
+		visibility: hidden;
+	  
+
+	}
+	/*.dataframe data {*/
+	table {
+            width:1600px;
+            height:auto;
+            background-color:#FFFFFF;
+    }
+
+	th{
+		border: 1px solid black;
+		padding: 7px;
+		font-size: 15pt;
+	}
+
+	td {
+		border: 1px solid black;
+		padding: 7px;
+		text-align: right;
+		font-size: 13pt;
+	}
+
+	 

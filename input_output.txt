@@ -1,0 +1,3 @@
+input data : 5개의 csv파일, 예측연도(int), 연장(int)
+
+output data : df_w_13 : 결과 데이터프레임 > 표 형태로 출력 및 csv파일로 다운
