@@ -727,8 +727,8 @@ def rmi_analysis(year0, km0):
         df_w_13_a = df_ws[is_bonbu & is_jisa & is_hang & is_no & is_si & is_jong]
         
         is_rmi = df_w_13_a['RMI']>=9
-        x = sum(is_rmi)               # RMI 9이상 연장
-        y = len(df_w_13_a)            # 자료상 연장
+        x = sum(is_rmi)/10          # RMI 9이상 연장
+        y = len(df_w_13_a)/10            # 자료상 연장
         z = round(x/y*100,2)                   # 9이상비율(B/A)
 
         df_w_13_b = pd.DataFrame({"자료상 연장(A)":[y], "RMI 9이상 연장(B)":[x], "RMI 9이상 비율(B/A)":[z]})
