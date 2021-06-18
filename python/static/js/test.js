@@ -15,17 +15,17 @@
 
 // sample csv파일 다운로드
 function down_csv(){
-    window.location.assign('../../../GUI/sample/csv_sample.zip');
+    window.location.assign('../static/GUI/sample/csv_sample.zip');
 }
 
 // manual 다운로드
 function down_inf(){
-    window.location.assign('../../../GUI/sample/manual_sample.hwp');
+    window.location.assign('GUI/sample/manual_sample.hwp');
 }
 
 // result csv 다운로드
 function down_rst(){
-    window.location.assign('../../../GUI/sample/result.csv');
+    window.location.assign('GUI/sample/result.csv');
 }
 
 

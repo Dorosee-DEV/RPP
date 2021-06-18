@@ -49,6 +49,10 @@ def execute():
     year = request.args.get("year", type=int)
     km = request.args.get("km", type=float)
     df_w_13 = RMI_1.rmi_analysis(year, km)
+
+    # if df_w_13 == 'error':
+    #     return render_template('index.html', errorlog='입력값 에러')
+
     # return redirect('/',resultimg=filename)
     # return render_template('test.html', resultimg=testexport())
     return render_template('index.html', resultimg=[df_w_13.to_html(classes='data')], titles=df_w_13.columns.values, resulttest ='1', test1=year, test2=km)

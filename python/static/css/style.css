@@ -562,7 +562,7 @@ body{
 	}
 	/*.dataframe data {*/
 	table {
-            width:1600px;
+            width:2000px;
             height:auto;
             background-color:#FFFFFF;
     }
@@ -570,14 +570,16 @@ body{
 	th{
 		border: 1px solid black;
 		padding: 7px;
-		font-size: 15pt;
+		font-size: 20pt;
+		text-align:center;
+		font-weight : 700;
 	}
 
 	td {
 		border: 1px solid black;
 		padding: 7px;
 		text-align: right;
-		font-size: 13pt;
+		font-size: 20pt;
 	}
 
 	 
