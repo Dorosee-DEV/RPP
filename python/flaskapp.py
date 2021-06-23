@@ -74,16 +74,27 @@ def execute():
     if os.path.isfile(fileW):
         os.remove(fileW)
 
+
     file1 = request.files['input1']
-    file1.save('input_Data/' + secure_filename(file1.filename))
+    if file1.filename != "":
+        file1.save('input_Data/' + secure_filename(file1.filename))
+
     file2 = request.files['input2']
-    file2.save('input_Data/' + secure_filename(file2.filename))
+    if file2.filename != "":
+        file2.save('input_Data/' + secure_filename(file2.filename))
+
     file3 = request.files['input3']
-    file3.save('input_Data/' + secure_filename(file3.filename))
+    if file3.filename != "":
+        file3.save('input_Data/' + secure_filename(file3.filename))
+
     file4 = request.files['input4']
-    file4.save('input_Data/' + secure_filename(file4.filename))
+    if file4.filename != "":
+        file4.save('input_Data/' + secure_filename(file4.filename))
+
     file5 = request.files['input5']
-    file5.save('input_Data/' + secure_filename(file5.filename))
+    if file5.filename != "":
+        file5.save('input_Data/' + secure_filename(file5.filename))
+
     #year = request.args.get("year", type=int)
     #km = request.args.get("km", type=float)
     year = request.form["year"]
