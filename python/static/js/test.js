@@ -15,18 +15,22 @@
 
 // sample csv파일 다운로드
 function down_csv(){
+<<<<<<< HEAD
     window.location.assign('csv_sample.zip');
+=======
+    window.location.assign('../static/GUI/sample/csv_sample.zip');
+>>>>>>> bff91d8b41d4758ded2cd9077aaa61fe7f7cb8f4
 }
 
 
 // manual 다운로드
 function down_inf(){
-    window.location.assign('../../../GUI/sample/manual_sample.hwp');
+    window.location.assign('GUI/sample/manual_sample.hwp');
 }
 
 // result csv 다운로드
 function down_rst(){
-    window.location.assign('../../../GUI/sample/result.csv');
+    window.location.assign('GUI/sample/result.csv');
 }
 
 
