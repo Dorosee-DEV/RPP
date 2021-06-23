@@ -25,7 +25,7 @@ body{
 	height: 38.52142333984375px;
 	width: 48px;
 	left: 103px;
-	top: 559.3385009765625px;
+	top: 658px;
 	
 	}
 	
@@ -86,6 +86,30 @@ body{
 	
 	}
 	
+
+	#header_2{
+	/* 자료입력 박스2 */
+
+	position: absolute;
+	width: 1718px;
+	height: 160.77px;
+	left: 103px;
+	top: 453.52px;
+		
+
+	background: radial-gradient(89.44% 89.44% at 50% 50%, rgba(72, 83, 116, 0.92) 0%, rgba(62, 73, 108, 0.1) 100%);
+	border-radius: 10px;
+	}
+
+
+
+
+
+
+
+
+
+
 	#Button3{ 
 	
 	/* HPMS */
@@ -318,14 +342,67 @@ body{
 	color: #FF0000;
 	}
 	
+
+	#text_check{
+	/* 조사 연도 */
+
+	position: absolute;
+	width: 160px;
+	height: 36px;
+	left: 124px;
+	top: 514px;
+
+	font-family: NanumGothic;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 35px;
+	line-height: 35px;
+
+	color: #FFFFFF;	
+	}
+
+	#y_check_info{
+	position: absolute;
+	width: 30px;
+	height: 28px;
+	left: 499px;
+	top: 534px;
+	
+	font-family: NanumGothic;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 30px;
+	
+	color: #FFFFFF;	
+	}
+
+	#text_year{
+
+	position: absolute;
+	width: 160px;
+	height: 36px;
+	left: 600px;
+	top: 514px;
+	
+	font-family: NanumGothic;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 35px;
+	line-height: 35px;
+	
+	color: #FFFFFF;	
+	}
+
 	#year{
 	/* year */
 	
 	position: absolute;
-	width: 258px;
+	width: 200px;
 	height: 80px;
-	left: 99px;
-	top: 449px;
+	left: 760px;
+	top: 494px;
+
 	
 	font-family: NanumGothic;
 	font-style: normal;
@@ -339,14 +416,75 @@ body{
 	}
 	
 	#yinfo{
-	/* 년 (예측연도 입력) */
-	
+	/* 년 */
 	
 	position: absolute;
-	width: 255px;
-	height: 40px;
-	left: 367px;
-	top: 489px;
+	width: 30px;
+	height: 28px;
+	left: 970px;
+	top: 534px;
+
+	font-family: NanumGothic;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 30px;
+
+	color: #FFFFFF;
+	}
+
+	img {
+		max-width: 100%;
+		max-height: 100%;
+	}
+
+
+	#text_km{
+	/* 최소 연장 */
+
+	position: absolute;
+	width: 160px;
+	height: 39px;
+	left: 1071px;
+	top: 515px;
+
+	font-family: NanumGothic;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 35px;
+	line-height: 35px;
+
+	color: #FFFFFF;
+
+	}
+
+	#km{
+	/* km 입력 box */
+
+	position: absolute;
+	width: 140px;
+	height: 80px;
+	left: 1239px;
+	top: 494px;
+
+	font-family: NanumGothic;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 40px;
+	line-height: 40px;
+	text-align: center;
+
+	color: #FFFFFF;
+	background: #505B7E;
+
+	}
+
+	#kinfo{
+	position: absolute;
+	width: 45px;
+	height: 25px;
+	left: 1391px;
+	top: 534px;
 	
 	font-family: NanumGothic;
 	font-style: normal;
@@ -355,53 +493,8 @@ body{
 	line-height: 30px;
 	
 	color: #FFFFFF;
-	}
-	img {
-		max-width: 100%;
-		max-height: 100%;
-	}
-
-
-	#km{
-		position: absolute;
-		height: 80px;
-		width: 258px;
-		left: 828px;
-		top: 449px;
-	
-
-		font-family: NanumGothic;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 40px;
-		line-height: 40px;
-		text-align: center;
-
-		color: #FFFFFF;
-		background: #505B7E;
 
 	}
-
-	#kinfo{
-		position: absolute;
-		height: 40px;
-		width: 255px;
-		left: 1096px;
-		top: 489px;
-		
-
-		font-family: NanumGothic;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 30px;
-		line-height: 30px;
-
-		color: #FFFFFF;
-
-
-	}
-
-
 
 
 	#rect3{
@@ -410,8 +503,8 @@ body{
 	position: absolute;
 	width: 258px;
 	height: 83px;
-	left: 1557px;
-	top: 449px;
+	left: 1528px;
+	top: 494px;
 	border-radius:15px;
 	
 	font-family: NanumGothic;
@@ -421,9 +514,11 @@ body{
 	/* line-height: 40px; */
 	text-align: center;
 	
-	background: #3E496C;
+	background: #000000;
 	color:#FFFFFF;
 	filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.25));
+
+	border-color: #FFFFFF;
 	}
 	
 	#text11{
@@ -434,8 +529,8 @@ body{
 	width: 560px;
 	height: 52px;
 	left: 160px;
-	top: 560px;
-	
+	top: 658px;
+
 	font-family: NanumGothic;
 	font-style: normal;
 	font-weight: normal;
@@ -445,38 +540,30 @@ body{
 	color: #FFFFFF;
 	}
 	
+
 	#rect4{
 	position: absolute;
 	width: 1731px;
-	height: 1696px;
+	height: 1587px;
 	left: 99px;
-	top: 629px;
+	top: 737px;
 	
 	background: #3E496C;
 	border-radius: 10px;
 	transform: matrix(1, 0, 0, -1, 0, 0);
 	}
 	
+
 	#rect5{
 	position: absolute;
 	width: 1682px;
-	height: 1645px;
+	height: 1539px;
 	left: 127px;
-	top: 654px;
+	top: 761px;
 	
 	background: #505B7E;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 10px;
-	}
-	
-	#ret_img{
-	/* 우선순위 선정결과 이미지창 */
-	
-	position: absolute;
-	width: 1627px;
-	height: 1588px;
-	left: 151px;
-	top: 663px;
 	}
 	
 	
@@ -492,7 +579,7 @@ body{
 	font-family: NanumGothic;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 50px;
+	font-size: 45px;
 	/* line-height: 40px; */
 	text-align: center;
 	
@@ -509,14 +596,14 @@ body{
 	
 	position: absolute;
 	width: 300px;
-	height: 95px;
+	height: 75px;
 	left: 1530px;
 	top: 2362px;
 	
 	font-family: NanumGothic;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 50px;
+	font-size: 45px;
 	/* line-height: 40px; */
 	text-align: center;
 	
@@ -525,6 +612,8 @@ body{
 	
 	box-shadow: 19.3151px 19.3151px 19.3151px 6.43836px rgba(0, 0, 0, 0.25);
 	border-radius: 19.3151px;
+
+	padding: 20px 0px 0px 0px;
 	
 	}
 	
@@ -537,32 +626,15 @@ body{
 	height: 46px;
 	left: 480px;
 	top: 2419px;
-
+	
 	}
 
 
 
-	#rst01 {
 
-		position: absolute;
-		width: 1627px;
-		height: 1588px;
-		left: 151px;
-		top: 679px;
-
-		background: #ccc;
-		border-collapse: separate;
-		border-spacing: 1px;
-		
-		border: 1px solid black;
-
-		visibility: hidden;
-	  
-
-	}
 	/*.dataframe data {*/
-	table {
-            width:1600px;
+	table{
+            width:2400px;
             height:auto;
             background-color:#FFFFFF;
     }
@@ -570,14 +642,16 @@ body{
 	th{
 		border: 1px solid black;
 		padding: 7px;
-		font-size: 15pt;
+		font-size: 20pt;
+		text-align:center;
+		font-weight : 700;
 	}
 
 	td {
 		border: 1px solid black;
 		padding: 7px;
 		text-align: right;
-		font-size: 13pt;
+		font-size: 20pt;
 	}
 
 	 

@@ -5,6 +5,8 @@ Created on Mon Feb 15 11:36:24 2021
 @author: BC-Woo
 """
 
+
+
 import flaskapp
 import pandas as pd
 import numpy as np
@@ -247,7 +249,8 @@ def rmi_analysis(year0, km0):
     y_1 = df_fn.iloc[0,0]   #조사연도
     y_2 = int(year0)            #예측연도
     n = int(y_2 - y_1)
-
+    if int(y_1 - y_2) >= 0:
+        return os.exit()
 
     for i in range(len(df1)):
 
@@ -526,7 +529,7 @@ def rmi_analysis(year0, km0):
         is_jong = df_ws['종점이정'] <= jong
         
         df_w_9 = df_ws[is_hang & is_no & is_s2 & is_jong]
-        mean_RMI = df_w_9['RMI'].mean()
+        mean_RMI = round(df_w_9['RMI'].mean(),2)
             
         if mean_RMI > 10:
             mean_RMI = 10
@@ -594,7 +597,7 @@ def rmi_analysis(year0, km0):
                     
                     df_w_11_b = df_ws[is_hang & is_no & is_si & is_jong]
                     
-                    mean_RMI = df_w_11_b['RMI'].mean()
+                    mean_RMI = round(df_w_11_b['RMI'].mean(),2)
 
                     if mean_RMI > 10:
                         mean_RMI = 10
@@ -670,7 +673,7 @@ def rmi_analysis(year0, km0):
                     
                     df_w_11_b = df_ws[is_hang & is_no & is_si & is_jong]
                     
-                    mean_RMI = df_w_11_b['RMI'].mean()
+                    mean_RMI = round(df_w_11_b['RMI'].mean(), 2)
 
                     if mean_RMI > 10:
                         mean_RMI = 10
@@ -694,7 +697,7 @@ def rmi_analysis(year0, km0):
 
     df_w_11_d = df_w_11_d.drop_duplicates()
             
-    df_w_11_e = df_w_11_d[df_w_11_d['연장']>=3]
+    df_w_11_e = df_w_11_d[df_w_11_d['연장']>=x]
     df_w_11 = df_w_11_e[df_w_11_e['RMI']>=7]
     df_w_11 = df_w_11.reset_index(drop=True)
 
@@ -716,32 +719,42 @@ def rmi_analysis(year0, km0):
         s1 = df_w_11.iloc[i,4]
         j1 = df_w_11.iloc[i,5]
 
-        is_bonbu = df_ws['본부'] == bonbu
-        is_jisa = df_ws['지사'] == jisa
         is_hang = df_ws['행선'] == hang
         is_no = df_ws['노선'] == no
         
         is_si = df_ws['시점이정'] >= s1
         is_jong = df_ws['종점이정'] <= j1
         
-        df_w_13_a = df_ws[is_bonbu & is_jisa & is_hang & is_no & is_si & is_jong]
+        df_w_13_a = df_ws[is_hang & is_no & is_si & is_jong]
         
         is_rmi = df_w_13_a['RMI']>=9
-        x = sum(is_rmi)/10          # RMI 9이상 연장
-        y = len(df_w_13_a)/10            # 자료상 연장
-        z = round(x/y*100,2)                   # 9이상비율(B/A)
-
-        df_w_13_b = pd.DataFrame({"자료상 연장(A)":[y], "RMI 9이상 연장(B)":[x], "RMI 9이상 비율(B/A)":[z]})
+        is_rmi_8 = df_w_13_a['RMI']>=8
+        is_rmi_7 = df_w_13_a['RMI']>=7
+        
+        x = sum(is_rmi)/10                       # RMI 9이상 연장
+        x1 = sum(is_rmi_8)/10
+        x2 = sum(is_rmi_7)/10  
+        
+        y = len(df_w_13_a)/10                      # 자료상 연장
+        z = round(x/y*100, 2)                   # 9이상비율(B/A)
+        z1 = round(x1/y*100, 2)
+        z2 = round(x2/y*100, 2) 
+        
+        df_w_13_b = pd.DataFrame({"자료상 연장(A)":[y], "RMI 9이상 연장(B)":[x], "RMI 9이상 비율(B/A)":[z]
+                                , "RMI 8이상 비율":[z1], "RMI 7이상 비율":[z2]})
         df_w_13_c = df_w_13_c.append(df_w_13_b, ignore_index=True)
-
 
     df_w_13_d = pd.concat([df_w_11, df_w_13_c], axis=1)
     df_w_13 = df_w_13_d.sort_values(by=['RMI 9이상 비율(B/A)'], axis=0, ascending=False)
     df_w_13 = df_w_13.reset_index(drop=True)
-    df_w_13 = df_w_13.reindex(columns=['본부', '지사', '행선', '노선', '시점이정', '종점이정', '연장', '자료상 연장(A)', 'RMI 9이상 연장(B)', 'RMI 9이상 비율(B/A)', 'RMI'])
-    df_w_13.columns = ['본부', '지사', '행선', '노선', '시점이정', '종점이정', '실제 연장', '자료상 연장(A)', 'RMI 9이상 연장(B)', 'RMI 9이상 비율(B/A)', '평균 RMI']
+    df_w_13 = df_w_13.reindex(columns=['본부', '지사', '행선', '노선', '시점이정', '종점이정', '연장',
+                                    '자료상 연장(A)', 'RMI 9이상 연장(B)', 'RMI 9이상 비율(B/A)'
+                                    ,"RMI 8이상 비율", "RMI 7이상 비율", 'RMI'])
+    df_w_13.index += 1
 
-    df_w_13.to_csv(os.path.join(PROJECT_DIRECTORY_PREFIX, 'static/resources/analysis_result.csv'), encoding= 'euc=kr')
+    df_w_13.columns = ['본부', '지사', '행선', '노선', '시점이정', '종점이정', '실제 연장',
+                    '자료상 연장(A)', 'RMI 9이상 연장(B)', 'RMI 9이상 비율(B/A)',
+                    "RMI 8이상 비율", "RMI 7이상 비율",'평균 RMI']
 
     return df_w_13
 

@@ -15,8 +15,9 @@
 
 // sample csv파일 다운로드
 function down_csv(){
-    window.location.assign('../../../GUI/sample/csv_sample.zip');
+    window.location.assign('csv_sample.zip');
 }
+
 
 // manual 다운로드
 function down_inf(){
@@ -47,6 +48,9 @@ function reset(){
     var input = document.createElement("input");
     input.type = "submit";
     input.onclick = resetText();
+    if ($('table').is(':visible')) {
+        $('table').hide()
+      }
 }
 
 
@@ -67,22 +71,27 @@ function resetText(){
     document.getElementById("year").value='';
     document.getElementById("km").value='';
 
-    table = document.getElementById("rst01")
-    table.style.visibility = "hidden"
 }
 
-
+var input = document.createElement("input");
+var input2 = document.createElement("input");
+var input3 = document.createElement("input");
+var input4 = document.createElement("input");
+var input5 = document.createElement("input");
 
 
 
 function selectCsv1(){
-    var input = document.createElement("input");
-    input.id = "inputTest1"
+    const form = document.getElementById('form1');
+    input.id = "input1";
+    input.name = "input1";
     input.type = "file";
+    input.style = "display:none";
     input.click();
 
     input.addEventListener('change', update1);
-
+    console.log(form);
+    form.appendChild(input);
     }
 
 function update1(event){
@@ -91,13 +100,14 @@ console.log(event.target.files[0].name);
 
 var fileName = event.target.files[0].name;
 var fileType = fileName.slice(fileName.indexOf(".") + 1).toLowerCase();
-
+console.log(fileName);
 console.log(fileType);
+var sc1 = document.getElementById("sc1");
+
 
 var pText = document.getElementById("p1");
-
     if(fileType == "csv"){
-        pText.innerText = "uploaded successfully"
+        pText.innerText = fileName + "uploaded successfully"
         pText.style.color = "#08D403";
         }
     else {
@@ -110,13 +120,15 @@ var pText = document.getElementById("p1");
 
 
 function selectCsv2(){
-    var input = document.createElement("input");
-    input.id = "inputTest"
-    input.type = "file";
-    input.click();
+    const form = document.getElementById('form1');
+    input2.id = "input2"
+    input2.name = "input2"
+    input2.type = "file";
+    input2.style = "display:none";
+    input2.click();
 
-    input.addEventListener('change', update2);
-
+    input2.addEventListener('change', update2);
+    form.appendChild(input2);
     }
 
 function update2(event){
@@ -131,7 +143,7 @@ console.log(fileType);
 var pText = document.getElementById("p2");
 
     if(fileType == "csv"){
-        pText.innerText = "uploaded successfully"
+        pText.innerText = fileName + "uploaded successfully"
         pText.style.color = "#08D403";
         }
     else {
@@ -144,13 +156,15 @@ var pText = document.getElementById("p2");
 
 
 function selectCsv3(){
-    var input = document.createElement("input");
-    input.id = "inputTest"
-    input.type = "file";
-    input.click();
+    const form = document.getElementById('form1');
+    input3.id = "input3"
+    input3.name = "input3"
+    input3.type = "file"
+    input3.style = "display:none";
+    input3.click();
 
-    input.addEventListener('change', update3);
-
+    input3.addEventListener('change', update3);
+    form.appendChild(input3);
     }
 
 function update3(event){
@@ -165,7 +179,7 @@ console.log(fileType);
 var pText = document.getElementById("p3");
 
     if(fileType == "csv"){
-        pText.innerText = "uploaded successfully"
+        pText.innerText = fileName + "uploaded successfully"
         pText.style.color = "#08D403";
         }
     else {
@@ -178,13 +192,15 @@ var pText = document.getElementById("p3");
 
 
 function selectCsv4(){
-    var input = document.createElement("input");
-    input.id = "inputTest"
-    input.type = "file";
-    input.click();
+    const form = document.getElementById('form1');
+    input4.id = "input4"
+    input4.name = "input4"
+    input4.type = "file"
+    input4.style = "display:none";
+    input4.click();
 
-    input.addEventListener('change', update4);
-
+    input4.addEventListener('change', update4);
+    form.appendChild(input4);
     }
 
 function update4(event){
@@ -199,7 +215,7 @@ console.log(fileType);
 var pText = document.getElementById("p4");
 
     if(fileType == "csv"){
-        pText.innerText = "uploaded successfully"
+        pText.innerText = fileName + "uploaded successfully"
         pText.style.color = "#08D403";
         }
     else {
@@ -212,13 +228,15 @@ var pText = document.getElementById("p4");
 
 
 function selectCsv5(){
-    var input = document.createElement("input");
-    input.id = "inputTest"
-    input.type = "file";
-    input.click();
+    const form = document.getElementById('form1');
+    input5.id = "input5"
+    input5.name = "input5"
+    input5.type = "file"
+    input5.style = "display:none";
+    input5.click();
 
-    input.addEventListener('change', update5);
-
+    input5.addEventListener('change', update5);
+    form.appendChild(input5);
     }
 
 function update5(event){
@@ -233,7 +251,7 @@ console.log(fileType);
 var pText = document.getElementById("p5");
 
     if(fileType == "csv"){
-        pText.innerText = "uploaded successfully"
+        pText.innerText = fileName + "uploaded successfully"
         pText.style.color = "#08D403";
         }
     else {
@@ -242,9 +260,6 @@ var pText = document.getElementById("p5");
     }
 
 }
-
-
-
 
 function showTable() {
      console.log("showTable CALLED")

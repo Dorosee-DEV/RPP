@@ -1,6 +1,9 @@
 from flask import *
 from threading import Thread
 from multiprocessing import Process, Queue
+
+from werkzeug.utils import secure_filename
+
 app = Flask(__name__)
 import pandas as pd
 import numpy as np
@@ -30,7 +33,7 @@ def csv_file_download_with_stream():
     return render_template('index.html')
 
 
-@app.route('/execute')  # 호출이 되면 데이터 프레임을 저장하고 파일 다운 준비상태를 만듭니다.
+@app.route('/execute',  methods=['POST'])  # 호출이 되면 데이터 프레임을 저장하고 파일 다운 준비상태를 만듭니다.
 def execute():
     # output_stream = StringIO()  ## dataframe을 저장할 IO stream
     # temp_df = pd.DataFrame({'col1': [7, 8, 9], 'col2': [4, 5, 6]})  ## dataframe을 아무거나 만들어주고,
@@ -45,21 +48,92 @@ def execute():
     # response.headers["Content-Disposition"] = "attachment; filename=" + filename + ".csv"
     # global testcsv
     # testcsv = response
+    filePath = f"static/resources/analysis_result.csv"
+    if os.path.isfile(filePath):
+        os.remove(filePath)
 
-    year = request.args.get("year", type=int)
-    km = request.args.get("km", type=float)
+
+    fileESAL = f"input_Data/ESAL.csv"
+    if os.path.isfile(fileESAL):
+        os.remove(fileESAL)
+
+    fileHPMS = f"input_Data/HPMS.csv"
+    if os.path.isfile(fileHPMS):
+        os.remove(fileHPMS)
+
+    filejisa = f"input_Data/jisa.csv"
+    if os.path.isfile(filejisa):
+        os.remove(filejisa)
+
+    fileJSJ = f"input_Data/JSJ.csv"
+    if os.path.isfile(fileJSJ):
+        os.remove(fileJSJ)
+
+    fileW = f"input_Data/W.csv"
+    if os.path.isfile(fileW):
+        os.remove(fileW)
+
+    file1 = request.files['input1']
+    file1.save('input_Data/' + secure_filename(file1.filename))
+    file2 = request.files['input2']
+    file2.save('input_Data/' + secure_filename(file2.filename))
+    file3 = request.files['input3']
+    file3.save('input_Data/' + secure_filename(file3.filename))
+    file4 = request.files['input4']
+    file4.save('input_Data/' + secure_filename(file4.filename))
+    file5 = request.files['input5']
+    file5.save('input_Data/' + secure_filename(file5.filename))
+    #year = request.args.get("year", type=int)
+    #km = request.args.get("km", type=float)
+    year = request.form["year"]
+    km = request.form["km"]
     df_w_13 = RMI_1.rmi_analysis(year, km)
+
+    # if df_w_13 == 'error':
+    #     return render_template('index.html', errorlog='입력값 에러')
+
     # return redirect('/',resultimg=filename)
     # return render_template('test.html', resultimg=testexport())
     return render_template('index.html', resultimg=[df_w_13.to_html(classes='data')], titles=df_w_13.columns.values, resulttest ='1', test1=year, test2=km)
     # return redirect(url_for('csv_file_download_with_stream', resultimg=testexport()))
 
 
-@app.route('/execute2')  # test용입니다.
+@app.route('/execute2', methods=['POST'])  # test용입니다.
 def execute2():
+    fileESAL = f"input_Data/ESAL.csv"
+    if os.path.isfile(fileESAL):
+        os.remove(fileESAL)
 
-    year = request.args.get("year")
-    km = request.args.get("km")
+    fileHPMS = f"input_Data/HPMS.csv"
+    if os.path.isfile(fileHPMS):
+        os.remove(fileHPMS)
+
+    filejisa = f"input_Data/jisa.csv"
+    if os.path.isfile(filejisa):
+        os.remove(filejisa)
+
+    fileJSJ = f"input_Data/JSJ.csv"
+    if os.path.isfile(fileJSJ):
+        os.remove(fileJSJ)
+
+    fileW = f"input_Data/W.csv"
+    if os.path.isfile(fileW):
+        os.remove(fileW)
+
+    file1 = request.files['input1']
+    file1.save('input_Data/' + secure_filename(file1.filename))
+    file2 = request.files['input2']
+    file2.save('input_Data/' + secure_filename(file2.filename))
+    file3 = request.files['input3']
+    file3.save('input_Data/' + secure_filename(file3.filename))
+    file4 = request.files['input4']
+    file4.save('input_Data/' + secure_filename(file4.filename))
+    file5 = request.files['input5']
+    file5.save('input_Data/' + secure_filename(file5.filename))
+    # year = request.form["year"]
+    # km = request.form["km"]
+    # year = request.args.get("year")
+    # km = request.args.get("km")
     te = testexport()
     return render_template('index.html', resultimg=[te.to_html(classes='data')], titles=te.columns.values, resulttest='1', test1=year, test2=km)
 
