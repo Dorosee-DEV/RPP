@@ -633,13 +633,8 @@ body{
 
 
 	/*.dataframe data {*/
-<<<<<<< HEAD
 	table{
             width:2400px;
-=======
-	table {
-            width:2000px;
->>>>>>> bff91d8b41d4758ded2cd9077aaa61fe7f7cb8f4
             height:auto;
             background-color:#FFFFFF;
     }

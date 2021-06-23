@@ -23,12 +23,7 @@
     </style> 
 
 </head>
-<style>
-    #rect3:hover {
-        background-color: gold;
-    }
 
-<<<<<<< HEAD
 <style>
     #rect3:hover {
         background-color: gold;
@@ -62,10 +57,6 @@
     }
 </style>
 
-=======
-
-</style>
->>>>>>> bff91d8b41d4758ded2cd9077aaa61fe7f7cb8f4
 <body>
 
     <div id='vector1'>                                 <!--벡터1_자료입력-->
@@ -76,15 +67,6 @@
         자료 입력
     </div>
 
-
-<<<<<<< HEAD
-=======
-<!--    <a id='information' href="static/GUI/sample/manual_sample.hwp"> i </a>-->
-<!--    <a id='sample' href="static/GUI/sample/csv_sample.zip"> sample </a>-->
-
-    <button id="information" onclick="down_inf()"> i </button>
-    <button id="sample" onclick="down_csv()">sample</button>
->>>>>>> bff91d8b41d4758ded2cd9077aaa61fe7f7cb8f4
 
     <a id='information' href="static/GUI/sample/manual_sample.hwp" title='프로그램 메뉴얼 입니다.'> i </a>
     <a id='sample' href="static/GUI/sample/csv_sample.zip" title='입력 데이터 양식 및 예시 파일 입니다.'> Sample </a>-->
@@ -99,18 +81,13 @@
     <div id='header_2'>       <!-- 자료입력박스_2-->
     </div>
 
-    <form id="form1" action="/execute2" method="post" enctype="multipart/form-data"> <!-- rmi_1 함수를 실행합니다 입력된 input의 year, km을 가져갑니다.-->
+    <form id="form1" action="/execute" method="post" enctype="multipart/form-data"> <!-- rmi_1 함수를 실행합니다 입력된 input의 year, km을 가져갑니다.-->
 
         <button type="button" id='Button3' onclick="selectCsv1()">HPMS</button>
-        <label id="sc1" name="sc1"></label>
         <button type="button" id='Button4' onclick="selectCsv2()">교통량</button>
-        <input id="sc2" name="sc2" type="hidden">
         <button type="button" id='Button5' onclick="selectCsv3()">기상</button>
-        <input id="sc3" name="sc3" type="hidden">
         <button type="button" id='Button6' onclick="selectCsv4()">제설제</button>
-        <input id="sc4" name="sc4" type="hidden">
         <button type="button" id='Button7' onclick="selectCsv5()">지점-지사</button>
-        <input id="sc5" name="sc5" type="hidden">
     
     
     <!--uploaded successfully-->
@@ -173,12 +150,6 @@
     <div id='text11'>
         리모델링 우선순위 선정결과
     </div>
-
-<<<<<<< HEAD
-=======
-    <input title="안녕하세요" type = "submit" id="rect3" value="실행" />
-    </form>
->>>>>>> bff91d8b41d4758ded2cd9077aaa61fe7f7cb8f4
 
     <input title="프로그램을 실행하는 버튼입니다" type = "submit" id="rect3" value="실행" />    <!--툴팁-->
 </form>
