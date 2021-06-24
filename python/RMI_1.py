@@ -17,6 +17,10 @@ import os
 
 
 def rmi_analysis(year0, km0):
+    filePath = f"static/resources/analysis_result.csv"
+    if os.path.isfile(filePath):
+        os.remove(filePath)
+
     PROJECT_DIRECTORY_PREFIX = os.getcwd()
 
     HPMS_DIRECTORY = os.path.join(PROJECT_DIRECTORY_PREFIX, 'input_Data/HPMS.csv')
@@ -755,6 +759,9 @@ def rmi_analysis(year0, km0):
     df_w_13.columns = ['본부', '지사', '행선', '노선', '시점이정', '종점이정', '실제 연장',
                     '자료상 연장(A)', 'RMI 9이상 연장(B)', 'RMI 9이상 비율(B/A)',
                     "RMI 8이상 비율", "RMI 7이상 비율",'평균 RMI']
+
+    df_w_13.to_csv(os.path.join(PROJECT_DIRECTORY_PREFIX, 'static/resources/analysis_result.csv'), encoding= 'euc=kr')
+
 
     return df_w_13
 

@@ -49,9 +49,7 @@ def execute():
     # response.headers["Content-Disposition"] = "attachment; filename=" + filename + ".csv"
     # global testcsv
     # testcsv = response
-    filePath = f"static/resources/analysis_result.csv"
-    if os.path.isfile(filePath):
-        os.remove(filePath)
+
 
 
     fileESAL = f"input_Data/ESAL.csv"
