@@ -79,25 +79,26 @@ var input2 = document.createElement("input");
 var input3 = document.createElement("input");
 var input4 = document.createElement("input");
 var input5 = document.createElement("input");
-
+var ipsubmit = document.createElement("button");
 
 
 function selectCsv1(){
     const form2 = document.getElementById('form2');
-    var ipsubmit = document.createElement("input");
+
     input.id = "input1";
     input.name = "input1";
     input.type = "file";
     input.style = "display:none";
     input.click();
-
-    ipsubmit.type ="submit";
-    ipsubmit.value = "년도확인";
+    ipsubmit.style="display:none";
+//    ipsubmit.type ="submit";
+//    ipsubmit.value = "년도확인";
 
     input.addEventListener('change', update1);
     console.log(form2);
     form2.appendChild(input);
     form2.appendChild(ipsubmit);
+
     }
 
 function update1(event){
@@ -115,6 +116,7 @@ var pText = document.getElementById("p1");
     if(fileType == "csv"){
         pText.innerText = fileName + "uploaded successfully"
         pText.style.color = "#08D403";
+        ipsubmit.click();
         }
     else {
         pText.innerText = "wrong data";
