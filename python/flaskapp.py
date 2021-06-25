@@ -34,6 +34,24 @@ def csv_file_download_with_stream():
     return render_template('index.html')
 
 
+@app.route('/HPMS',  methods=['POST'])
+def hpmsyear():
+    # fileHPMS = f"input_Data/HPMS.csv"
+    # if os.path.isfile(fileHPMS):
+    #     os.remove(fileHPMS)
+
+    file1 = request.files['input1']
+    if file1.filename != "":
+        file1.save('input_Data/' + secure_filename(file1.filename))
+
+
+    y1 = RMI_1.rmi_hpms()
+    print(y1)
+    okmessage = "파일이 업로드되었습니다."
+    # return redirect(url_for('csv_file_download_with_stream', y1=y1, okmessage=okmessage))
+    return render_template('index.html', y1=y1, okmessage=okmessage)
+
+
 @app.route('/execute',  methods=['POST'])  # 호출이 되면 데이터 프레임을 저장하고 파일 다운 준비상태를 만듭니다.
 def execute():
     # output_stream = StringIO()  ## dataframe을 저장할 IO stream
@@ -50,15 +68,14 @@ def execute():
     # global testcsv
     # testcsv = response
 
-    y1 = RMI_1.rmi_hpms()
 
     fileESAL = f"input_Data/ESAL.csv"
     if os.path.isfile(fileESAL):
         os.remove(fileESAL)
 
-    fileHPMS = f"input_Data/HPMS.csv"
-    if os.path.isfile(fileHPMS):
-        os.remove(fileHPMS)
+    # fileHPMS = f"input_Data/HPMS.csv"
+    # if os.path.isfile(fileHPMS):
+    #     os.remove(fileHPMS)
 
     filejisa = f"input_Data/jisa.csv"
     if os.path.isfile(filejisa):
@@ -73,9 +90,9 @@ def execute():
         os.remove(fileW)
 
 
-    file1 = request.files['input1']
-    if file1.filename != "":
-        file1.save('input_Data/' + secure_filename(file1.filename))
+    # file1 = request.files['input1']
+    # if file1.filename != "":
+    #     file1.save('input_Data/' + secure_filename(file1.filename))
 
     file2 = request.files['input2']
     if file2.filename != "":
@@ -98,7 +115,7 @@ def execute():
     year = request.form["year"]
     km = request.form["km"]
     df_w_13 = RMI_1.rmi_analysis(year, km)
-
+    y1 = RMI_1.rmi_hpms()
     # if df_w_13 == 'error':
     #     return render_template('index.html', errorlog='입력값 에러')
 

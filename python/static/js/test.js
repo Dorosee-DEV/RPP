@@ -83,16 +83,21 @@ var input5 = document.createElement("input");
 
 
 function selectCsv1(){
-    const form = document.getElementById('form1');
+    const form2 = document.getElementById('form2');
+    var ipsubmit = document.createElement("input");
     input.id = "input1";
     input.name = "input1";
     input.type = "file";
     input.style = "display:none";
     input.click();
 
+    ipsubmit.type ="submit";
+    ipsubmit.value = "년도확인";
+
     input.addEventListener('change', update1);
-    console.log(form);
-    form.appendChild(input);
+    console.log(form2);
+    form2.appendChild(input);
+    form2.appendChild(ipsubmit);
     }
 
 function update1(event){

@@ -81,9 +81,12 @@
     <div id='header_2'>       <!-- 자료입력박스_2-->
     </div>
 
-    <form id="form1" action="/execute" method="post" enctype="multipart/form-data"> <!-- rmi_1 함수를 실행합니다 입력된 input의 year, km을 가져갑니다.-->
 
+    <form id="form2" action="/HPMS" method="post" enctype="multipart/form-data">
         <button type="button" id='Button3' onclick="selectCsv1()">HPMS</button>
+    </form>
+
+    <form id="form1" action="/execute" method="post" enctype="multipart/form-data"> <!-- rmi_1 함수를 실행합니다 입력된 input의 year, km을 가져갑니다.-->
         <button type="button" id='Button4' onclick="selectCsv2()">교통량</button>
         <button type="button" id='Button5' onclick="selectCsv3()">기상</button>
         <button type="button" id='Button6' onclick="selectCsv4()">제설제</button>
@@ -92,7 +95,7 @@
     
     <!--uploaded successfully-->
     <div id='textdiv4'>
-        <p id='p1'></p>
+        <p id='p1'>{{okmessage}}</p>
     </div>
     <div id='textdiv5'>
         <p id="p2"></p>
