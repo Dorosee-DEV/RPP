@@ -47,7 +47,7 @@ def hpmsyear():
 
     y1 = RMI_1.rmi_hpms()
     print(y1)
-    okmessage = "파일이 업로드되었습니다."
+    okmessage = "uploaded successfully"
     # return redirect(url_for('csv_file_download_with_stream', y1=y1, okmessage=okmessage))
     return render_template('index.html', y1=y1, okmessage=okmessage)
 
