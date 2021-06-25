@@ -10,10 +10,10 @@ body{
 	/* Vector */
 	
 	position: absolute;
-	height: 38.521400451660156px;
+	height: 39px;
 	width: 48px;
 	left: 103px;
-	top: 85.60311889648438px;
+	top: 70px;
 	
 	}
 	
@@ -22,7 +22,7 @@ body{
 	
 	
 	position: absolute;
-	height: 38.52142333984375px;
+	height: 38.5px;
 	width: 48px;
 	left: 103px;
 	top: 658px;
@@ -32,12 +32,12 @@ body{
 	#information{
 	position: absolute;
 	width: 62px;
-	height: 56.83px;
+	height: 56.8px;
 	left: 1546px;
 	top: 42px;
 	
 	background: #385A6D;
-	box-shadow: 0px 2.95238px 2.95238px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
 	border-radius: 30px;
 	
 	font-family: NanumGothic;
@@ -56,21 +56,21 @@ body{
 	
 	position: absolute;
 	width: 161px;
-	height: 52.93px;
+	height: 53px;
 	left: 1648px;
 	top: 46px;
 	
 	font-family: NanumGothic;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 29.4064px;
+	font-size: 29px;
 	/* line-height: 29px; */
 	text-align :center;
 
 	color: #FFFFFF;
 	background: #385A6D;
-	box-shadow: 0px 2.94064px 2.94064px rgba(0, 0, 0, 0.25);
-	border-radius: 14.7032px;
+	box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+	border-radius: 14.7px;
 	}
 	
 	#header{
@@ -230,11 +230,11 @@ body{
 	}
 	
 	#textdiv1{
-		position: absolute;
+	position: absolute;
 	width: 316px;
 	height: 52px;
 	left: 164px;
-	top: 88px;
+	top: 70px;
 	
 	font-family: NanumGothic;
 	font-style: normal;
@@ -246,7 +246,7 @@ body{
 	
 	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	}
-	
+
 	#textdiv4{
 	/* uploaded successfully */
 	
@@ -361,7 +361,27 @@ body{
 	color: #FFFFFF;	
 	}
 
+	#year_check{
+	/*조사연도 출력값 */
+
+	position: absolute;
+	width: 200px;
+	height: 80px;
+	left: 300px;
+	top: 515px;
+	
+	font-family: NanumGothic;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 40px;
+	line-height: 40px;
+	text-align: center;
+	
+	color: #FFFFFF;	
+	}
+	
 	#y_check_info{
+	/*년 */
 	position: absolute;
 	width: 30px;
 	height: 28px;

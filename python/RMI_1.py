@@ -354,7 +354,7 @@ def rmi_analysis(year0, km0):
     df_w_2 = pd.DataFrame()
     df_w_3 = pd.DataFrame()
     df_w_4 = pd.DataFrame()
-    x = int(km0)
+    x = float(km0)
     
     for i in range(len(df_ws)):
         
