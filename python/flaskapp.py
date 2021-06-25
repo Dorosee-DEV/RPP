@@ -50,7 +50,7 @@ def execute():
     # global testcsv
     # testcsv = response
 
-
+    y1 = RMI_1.rmi_hpms()
 
     fileESAL = f"input_Data/ESAL.csv"
     if os.path.isfile(fileESAL):
@@ -104,48 +104,49 @@ def execute():
 
     # return redirect('/',resultimg=filename)
     # return render_template('test.html', resultimg=testexport())
-    return render_template('index.html', resultimg=[df_w_13.to_html(classes='data')], titles=df_w_13.columns.values, resulttest ='1', test1=year, test2=km)
+    return render_template('index.html', resultimg=[df_w_13.to_html(classes='data')], titles=df_w_13.columns.values, resulttest ='1', test1=year, test2=km, y1 = y1)
     # return redirect(url_for('csv_file_download_with_stream', resultimg=testexport()))
 
 
 @app.route('/execute2', methods=['POST'])  # test용입니다.
 def execute2():
-    fileESAL = f"input_Data/ESAL.csv"
-    if os.path.isfile(fileESAL):
-        os.remove(fileESAL)
-
-    fileHPMS = f"input_Data/HPMS.csv"
-    if os.path.isfile(fileHPMS):
-        os.remove(fileHPMS)
-
-    filejisa = f"input_Data/jisa.csv"
-    if os.path.isfile(filejisa):
-        os.remove(filejisa)
-
-    fileJSJ = f"input_Data/JSJ.csv"
-    if os.path.isfile(fileJSJ):
-        os.remove(fileJSJ)
-
-    fileW = f"input_Data/W.csv"
-    if os.path.isfile(fileW):
-        os.remove(fileW)
-
-    file1 = request.files['input1']
-    file1.save('input_Data/' + secure_filename(file1.filename))
-    file2 = request.files['input2']
-    file2.save('input_Data/' + secure_filename(file2.filename))
-    file3 = request.files['input3']
-    file3.save('input_Data/' + secure_filename(file3.filename))
-    file4 = request.files['input4']
-    file4.save('input_Data/' + secure_filename(file4.filename))
-    file5 = request.files['input5']
-    file5.save('input_Data/' + secure_filename(file5.filename))
+    # fileESAL = f"input_Data/ESAL.csv"
+    # if os.path.isfile(fileESAL):
+    #     os.remove(fileESAL)
+    #
+    # fileHPMS = f"input_Data/HPMS.csv"
+    # if os.path.isfile(fileHPMS):
+    #     os.remove(fileHPMS)
+    #
+    # filejisa = f"input_Data/jisa.csv"
+    # if os.path.isfile(filejisa):
+    #     os.remove(filejisa)
+    #
+    # fileJSJ = f"input_Data/JSJ.csv"
+    # if os.path.isfile(fileJSJ):
+    #     os.remove(fileJSJ)
+    #
+    # fileW = f"input_Data/W.csv"
+    # if os.path.isfile(fileW):
+    #     os.remove(fileW)
+    #
+    # file1 = request.files['input1']
+    # file1.save('input_Data/' + secure_filename(file1.filename))
+    # file2 = request.files['input2']
+    # file2.save('input_Data/' + secure_filename(file2.filename))
+    # file3 = request.files['input3']
+    # file3.save('input_Data/' + secure_filename(file3.filename))
+    # file4 = request.files['input4']
+    # file4.save('input_Data/' + secure_filename(file4.filename))
+    # file5 = request.files['input5']
+    # file5.save('input_Data/' + secure_filename(file5.filename))
     # year = request.form["year"]
     # km = request.form["km"]
     # year = request.args.get("year")
     # km = request.args.get("km")
+    y1 = RMI_1.rmi_hpms()
     te = testexport()
-    return render_template('index.html', resultimg=[te.to_html(classes='data')], titles=te.columns.values, resulttest='1', test1=year, test2=km)
+    return render_template('index.html', resultimg=[te.to_html(classes='data')], titles=te.columns.values, resulttest='1', test1=year, test2=km, y1= y1)
 
 
 @app.route('/error') # 실행을 누르지않고 export를 누를때 호출됩니다.

@@ -16,6 +16,16 @@ import os
 #import dataframe_image as dfi
 
 
+def rmi_hpms():
+    PROJECT_DIRECTORY_PREFIX = os.getcwd()
+
+    HPMS_DIRECTORY = os.path.join(PROJECT_DIRECTORY_PREFIX, 'input_Data/HPMS.csv')
+    df1 = pd.read_csv(HPMS_DIRECTORY, encoding='cp949')
+
+    y_1 = df1.iloc[1, 0]  # 조사연도
+    print(y_1)
+    return y_1
+
 def rmi_analysis(year0, km0):
     filePath = f"static/resources/analysis_result.csv"
     if os.path.isfile(filePath):
