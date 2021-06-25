@@ -114,7 +114,7 @@ var sc1 = document.getElementById("sc1");
 
 var pText = document.getElementById("p1");
     if(fileType == "csv"){
-        pText.innerText = fileName + "uploaded successfully"
+        pText.innerText = "uploaded successfully"
         pText.style.color = "#08D403";
         ipsubmit.click();
         }
@@ -151,7 +151,7 @@ console.log(fileType);
 var pText = document.getElementById("p2");
 
     if(fileType == "csv"){
-        pText.innerText = fileName + "uploaded successfully"
+        pText.innerText = "uploaded successfully"
         pText.style.color = "#08D403";
         }
     else {
@@ -187,7 +187,7 @@ console.log(fileType);
 var pText = document.getElementById("p3");
 
     if(fileType == "csv"){
-        pText.innerText = fileName + "uploaded successfully"
+        pText.innerText = "uploaded successfully"
         pText.style.color = "#08D403";
         }
     else {
@@ -223,7 +223,7 @@ console.log(fileType);
 var pText = document.getElementById("p4");
 
     if(fileType == "csv"){
-        pText.innerText = fileName + "uploaded successfully"
+        pText.innerText = "uploaded successfully"
         pText.style.color = "#08D403";
         }
     else {
@@ -259,7 +259,7 @@ console.log(fileType);
 var pText = document.getElementById("p5");
 
     if(fileType == "csv"){
-        pText.innerText = fileName + "uploaded successfully"
+        pText.innerText = "uploaded successfully"
         pText.style.color = "#08D403";
         }
     else {
