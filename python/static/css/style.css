@@ -610,13 +610,49 @@ body{
 	border-radius: 19.359px;
 	}
 	
+
+	
+	
+	#reset_a{
+	/* Reset */
+	
+	position:absolute;
+	width: 300px;
+	height: 80px;
+	left: 99px;
+	top: 2362px;
+	
+	padding: 15px 0px 0px 0px;
+
+
+	font-family: NanumGothic;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 45px;
+	/* line-height: 40px; */
+	text-align: center;
+	
+	background: #505B7E ;
+	color: #FFFFFF;
+	
+	box-shadow: 19.359px 19.359px 19.359px 6.45299px rgba(0, 0, 0, 0.25);
+	border-radius: 19.359px;
+	}
+		
+
+
+
+
+
+
+	
 	
 	#save{
 	/* save */
 	
 	position: absolute;
 	width: 300px;
-	height: 75px;
+	height: 80px;
 	left: 1530px;
 	top: 2362px;
 	
@@ -633,7 +669,7 @@ body{
 	box-shadow: 19.3151px 19.3151px 19.3151px 6.43836px rgba(0, 0, 0, 0.25);
 	border-radius: 19.3151px;
 
-	padding: 20px 0px 0px 0px;
+	padding: 15px 0px 0px 0px;
 	
 	}
 	

@@ -185,11 +185,12 @@
     </div>
 
 
-    <button id='reset' onclick="reset()" title='프로그램을 초기화하는 버튼입니다.'>초기화
-    </button>
+    <!--<button id='reset' onclick="reset()" title='프로그램을 초기화하는 버튼입니다.'>초기화
+    </button>-->
 
-    <!--<a id="reset" href="/" style="display:block">초기화</a>-->
- 
+    <a id="reset_a" href="/" style="display:block" title='프로그램을 초기화하는 버튼입니다.'>
+    초기화</a>
+
 
     {% if resulttest == '1' %}
     <a id="save" href="/analysis/result?resulttest=1" style="display:block">저장</a>
@@ -198,10 +199,9 @@
     <a id="save" href="/error" style="display:block" title='결과 데이터를 저장하는 버튼입니다.'>저장</a>
     {% endif %}
 
+
     <!-- <a id="save" href="/export?resulttest=1" style="display:block">Export</a>-->
     <!-- <button id='save' onclick="down_rst()">Save</button> -->
-
-
 
     <!-- <button id='rect3' onclick="showTable()">실행</button> -->
     <!-- <a id="rect3" href="http://localhost:5000/execute2">실행</a> -->

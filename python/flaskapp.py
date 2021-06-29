@@ -36,18 +36,28 @@ def csv_file_download_with_stream():
 
 @app.route('/HPMS',  methods=['POST'])
 def hpmsyear():
-    # fileHPMS = f"input_Data/HPMS.csv"
-    # if os.path.isfile(fileHPMS):
-    #     os.remove(fileHPMS)
+
 
     file1 = request.files['input1']
     if file1.filename != "":
+
+        fileHPMS = f"input_Data/HPMS.csv"
+
+        if os.path.isfile(fileHPMS):
+            os.remove(fileHPMS)
+
         file1.save('input_Data/' + secure_filename(file1.filename))
 
+        if os.path.isfile(fileHPMS):
+            okmessage = "uploaded successfully"
+            y1 = RMI_1.rmi_hpms()
+        else:
+            okmessage = "HPMS파일이 아닙니다."
+            y1 = 0
 
-    y1 = RMI_1.rmi_hpms()
-    print(y1)
-    okmessage = "uploaded successfully"
+    else :
+        y1 = RMI_1.rmi_hpms()
+
     # return redirect(url_for('csv_file_download_with_stream', y1=y1, okmessage=okmessage))
     return render_template('index.html', y1=y1, okmessage=okmessage)
 
